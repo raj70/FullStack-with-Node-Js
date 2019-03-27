@@ -1,4 +1,4 @@
-npm init [makes ready for adding dependies]
+npm init [makes ready for adding dependencies]
 npm install express [web server]
 npm install mongodb [drive to connect to mongodb]
 npm install react react-dom [for front end]
@@ -22,4 +22,5 @@ echo > api/index.js
 
 
 
-ref: https://jscomplete.com/learn/1rd-reactful
+ref: 
+https://jscomplete.com/learn/1rd-reactful
