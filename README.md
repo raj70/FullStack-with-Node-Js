@@ -1,7 +1,7 @@
 # FullStackJs
 Full Stack Development on NodeJS, React and MongoDb
 
-#Initial Setup
+# Initial Setup
 
 npm init [makes ready for adding dependencies]
 
