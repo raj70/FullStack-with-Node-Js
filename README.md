@@ -35,12 +35,16 @@ npm i
 
 
 
-create files
+## Create files
 
-in CMD:
+In CMD:
 
 echo > src/index.js
 
 echo > public/index.html [to host]
 
 echo > api/index.js
+
+In Mac:
+use touch
+
