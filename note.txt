@@ -100,3 +100,22 @@ Handlebars
 To valid date on react props;
 install prop-types
 https://www.npmjs.com/package/prop-types
+
+If you don't need state in react, then use static react component:
+const App = () => {
+	return(
+		<div>HI</div>
+	);
+};
+
+else
+class App extends React.Component{
+	constructor(props){
+		super(props);
+		this.state ={ test: 43};
+	}
+
+	return(
+			<div>HI</div>
+		);
+}
