@@ -1,4 +1,4 @@
-npm init [makes ready for adding dependencies]
+npm init [makes ready for adding dependies]
 npm install express [web server]
 npm install mongodb [drive to connect to mongodb]
 npm install react react-dom [for front end]
@@ -20,7 +20,78 @@ echo > src/index.js
 echo > public/index.html [to host]
 echo > api/index.js
 
+ref: https://jscomplete.com/learn/1rd-reactful
 
 
-ref: 
-https://jscomplete.com/learn/1rd-reactful
+import module:
+import config from "./config"; this is import module from config.js
+
+to import non default module;
+import config, {nodeEnv} from "./config";
+
+express is wrap around http/https of node.js
+
+
+To create a server:
+import http from 'http';
+
+const server = http.createServer();
+
+server.listen(8080);
+
+server.on("request", {req, res} => {
+
+});
+
+Above is basic of creating a http server; 
+
+Express:
+import config from "./config";
+
+import express from 'express';
+import fs from 'fs';
+
+const server = express();
+
+//express can listen on route eg:
+server.get("/" , (req, res) => {
+	res.send("Hello Exprss");
+});
+
+server.get("/about.html", (req, res) => {
+    fs.readFile('./about.html', (error, data) => {
+        res.send(data.toString());
+    });
+});
+
+server.listen(config.port, ()=>{
+	console.info("Express listening on port ", config.port);
+});
+
+
+exprss has static; will server file from a folder:
+server.use(express.static('public'));
+
+we can separate router in different file;
+
+EJS: dynamic template (Effective Javascript templating)
+to render server component;
+ejs looks for .ejs in Views folder
+
+server.set('view engine', 'ejs');
+
+ejs supports parsial view :
+<%- include('header') %> this is header from header.ejs
+    
+	<h1>EJS</h1>
+	<%= Math.random()  %>
+	<%= content %>
+
+<%- include('footer') %> this is footer from footer.ejs
+
+There are few other framework:
+Koajs
+hapijs
+sailsjs
+Jade (most popular)
+Handlebars 

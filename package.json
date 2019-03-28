@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/node": "^7.2.2",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mongodb": "^3.2.2",
     "prop-types": "^15.7.2",
