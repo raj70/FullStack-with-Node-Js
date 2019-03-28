@@ -14,7 +14,7 @@ server.set('view engine', 'ejs');
 server.get("/", (req, res) => {
     //res.send("Hello Express");
     res.render("index", {
-        content: 'Hello Express'
+        content: 'Hello'
     });
 });
 

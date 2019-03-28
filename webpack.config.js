@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js', /* start from here*/
     output: { 
-        path: path.resolve('public'), /* in public bundle js to bundle.js*/
+        path: path.resolve('public'), /* in public folde bundle js filess to bundle.js*/
         filename: 'bundle.js',
     },
     module: {

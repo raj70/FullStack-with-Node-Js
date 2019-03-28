@@ -95,3 +95,8 @@ hapijs
 sailsjs
 Jade (most popular)
 Handlebars 
+
+
+To valid date on react props;
+install prop-types
+https://www.npmjs.com/package/prop-types
