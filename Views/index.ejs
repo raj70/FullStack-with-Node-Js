@@ -1,9 +1,11 @@
+	<script type="text/javascript">
+		window.initialData = <%- JSON.stringify(initialData) -%>
+	</script>
 <%- include('header') %>
-    
-	<h1>EJS</h1>
-	<%= Math.random()  %>
+
 	<div id="root">
-		<%= content %>
+		<%- initialDom -%>
 	</div>
 
 <%- include('footer') %>
+

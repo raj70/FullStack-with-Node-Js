@@ -1,25 +1,51 @@
 
 /* importing component that is used in server*/
 import config, { nodeEnv } from "./config";
-import express from 'express';
-import fs from 'fs';
 /* importing router from /api/index/js*/
 import apiRouter from "./api";
 
+/* this serverRender helps us to render react's content if user has disabled javascript on their browser */
+import serverRender from './serverRender';
+
+/* importing from library */
+import express from 'express';
+import sassMidware from 'node-sass-middleware';
+import path from 'path';
+/* or
+/var path = require('path'); */
+
+/*  */
 const server = express();
+
+server.use(
+    sassMidware({
+        src: path.join(__dirname, 'sass'),
+        dest: path.join(__dirname, 'public'),
+        debug: true,
+        outputStyle: 'compressed',
+    })    
+);
 
 /* setting up the EJS*/
 server.set('view engine', 'ejs');
 
+
 server.get("/", (req, res) => {
     //res.send("Hello Express");
-    res.render("index", {
-        content: 'Hello'
-    });
+    serverRender()
+        .then(({ initialData, initialDom }) => {
+            return res.render("index", {/*ejs will look index.ejs in views folder */
+                initialData: initialData,
+                initialDom: initialDom
+            })
+        }
+        )
+        .catch(console.error);
 });
 
-/* use router in from /api/index.js */
+/* use router from /api/index.js */
 server.use("/api", apiRouter);
+
 /* express has static method that can server static file from a folder*/
 server.use(express.static('public'));
 
@@ -29,6 +55,6 @@ server.use(express.static('public'));
 //    });
 //});
 
-server.listen(config.port, () => {
-    console.info("Express listening on port ", config.port);
+server.listen(config.port, config.host, () => {
+    console.info("Express listening on port ", config.port, config.host);
 });

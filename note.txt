@@ -107,7 +107,6 @@ const App = () => {
 		<div>HI</div>
 	);
 };
-
 else
 class App extends React.Component{
 	constructor(props){
@@ -119,3 +118,18 @@ class App extends React.Component{
 			<div>HI</div>
 		);
 }
+
+//Json: npm -i -s json-loader
+changed on webpack.config.js
+
+
+//installed sass middleware
+npm -i node-sass-middleware
+
+## to run webpack
+npm run dev 
+"dev" is defined in package.json
+
+
+//ajax: axios
+npm install -s axios

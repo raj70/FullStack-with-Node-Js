@@ -9,6 +9,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.json$/,
+                exclude: /node_modules/, /* exclude files in mode_modules*/
+                loader: 'json-loader'
+            },
+            {
                 test: /\.js$/, /* all js file*/
                 exclude: /node_modules/, /* exclude files in mode_modules*/
                 use: {
