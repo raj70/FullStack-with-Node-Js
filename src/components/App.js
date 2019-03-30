@@ -2,7 +2,7 @@ import React from 'react';
 import Proptypes from 'prop-types';
 
 import Header from "./Header";
-import ContestPreview from './ContestPreview';
+import ContestList from './ContestList';
 
 
 //import axios from 'axios';
@@ -49,18 +49,11 @@ class App extends React.Component {
         return (           
             <div className="App" >
                 <Header message={this.state.pageHeader} />
-                <div>
-                    {this.props.initialContests.map(c =>
-                        <ContestPreview key={c.id} contest={c} />
-                    )}                    
-                </div>
+                <ContestList contests={this.state.contests} />
             </div>
         );
     };
 }
 
-App.propTypes = {
-    initialContests: Proptypes.array
-}
 
 export default App;
