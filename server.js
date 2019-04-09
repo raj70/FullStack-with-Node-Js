@@ -1,6 +1,7 @@
-
-/* importing component that is used in server*/
-import config, { nodeEnv } from "./config";
+/* importing component that is used in server */
+import config, {
+    nodeEnv
+} from "./config";
 /* importing router from /api/index/js*/
 import apiRouter from "./api";
 
@@ -23,30 +24,33 @@ server.use(
         dest: path.join(__dirname, 'public'),
         debug: true,
         outputStyle: 'compressed',
-    })    
+    })
 );
 
-/* setting up the EJS*/
+/* setting up the EJS */
 server.set('view engine', 'ejs');
 
 
 server.get("/", (req, res) => {
     //res.send("Hello Express");
     serverRender()
-        .then(({ initialData, initialDom }) => {
-            return res.render("index", {/*ejs will look index.ejs in views folder */
+        .then(({
+            initialData,
+            initialDom
+        }) => {
+            return res.render("index", {
+                /*ejs will look index.ejs in views folder */
                 initialData: initialData,
                 initialDom: initialDom
             })
-        }
-        )
+        })
         .catch(console.error);
 });
 
 /* use router from /api/index.js */
 server.use("/api", apiRouter);
 
-/* express has static method that can server static file from a folder*/
+/* express has static method that can server static file from a folder */
 server.use(express.static('public'));
 
 //server.get("/about.html", (req, res) => {
