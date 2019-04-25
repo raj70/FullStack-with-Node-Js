@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
 
-
 class ContestPreview extends Component {
-
-    state = {
-
-    };
-
-    handleClick = () => {
-        console.log(this.props.contest.contestName);
-    };
-
-    render() {
-        return (
-            <div className="link ContestPreview" onClick={this.handleClick}>
-                <div className="category-name">
-                    {this.props.contest.categoryName}
-                </div>
-                <div className="contest-name">
-                    {this.props.contest.contestName}
-                </div>
-            </div>
-        );   
-    };
-};
+  handleClick = () => {
+    this.props.onClick(this.props._id);
+  };
+  render() {
+    return (
+      <div className="link ContestPreview" onClick={this.handleClick}>
+        <div className="category-name">
+          {this.props.categoryName}
+        </div>
+        <div className="contest-name">
+          {this.props.contestName}
+        </div>
+      </div>
+    );
+  }
+}
 
 /*
 const ContestPreview = (props) => (
@@ -42,15 +34,16 @@ const ContestPreview = (props) => (
 */
 
 ContestPreview.propTypes = {
-    categoryName: PropTypes.string.isRequired,
-    contestName: PropTypes.string.isRequired,
-
+  _id: PropTypes.string,
+  categoryName: PropTypes.string.isRequired,
+  contestName: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
 ContestPreview.defaultProps = {
-    categoryName: "",
-    contestName: ""
-}
+  categoryName: '',
+  contestName: ''
+};
 
 
 export default ContestPreview;

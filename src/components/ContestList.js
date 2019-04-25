@@ -5,18 +5,21 @@ import PropTypes from 'prop-types';
 import ContestPreview from './ContestPreview';
 
 
-const ContestList = (props) => {
-    return (
-        <div className="ContestList">
-            {props.contests.map(c =>
-                <ContestPreview key={c.id} contest={c} />
-            )}
-        </div>
-    );
-};
+const ContestList = ({ contests, onContestClick }) => (
+    <div className="ContestList">
+      {Object.keys(contests).map(contestId =>
+        <ContestPreview
+          key={contestId}
+          onClick={onContestClick}
+          {...contests[contestId]} />
+      )}
+    </div>
+  );
 
+/* defination of array */
 ContestList.proptypes = {
-    contests: PropTypes.array,
+  contests: PropTypes.object,
+  onContestClick: PropTypes.func.isRequired,
 };
 
 export default ContestList;

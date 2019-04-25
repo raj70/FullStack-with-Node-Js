@@ -26,9 +26,7 @@ npm install -d @babel/node
 
 
 
-
-if you have this package.json then
-
+### if you have this package.json then
 npm i
 
 
@@ -48,3 +46,19 @@ echo > api/index.js
 In Mac:
 use touch
 
+
+# mongodb
+
+## Help
+https://www.tutorialspoint.com/mongodb/mongodb_insert_document.htm
+https://github.com/mongodb/node-mongodb-native
+
+
+# Tips: To search an item in source code
+git grep "<hhh>" 
+for example: git grep "id:" | grep -v Test
+
+
+
+# Electrode
+https://www.electrode.io/

@@ -2,9 +2,14 @@
 const data = {
     contests: [
         {
+            id: 0,
+            categoryName: "Website-1",
+            contestName: "Free programming books"
+        },
+        {
             id: 1,
-            categoryName: "Business/Company",
-            contestName: "Cognitive Building Bricks"
+            categoryName: "Website-2",
+            contestName: "Free programming books"
         },
         {
             id: 2,
@@ -18,9 +23,9 @@ const data = {
         },
         {
             id: 4,
-            categoryName: "Website",
+            categoryName: "Website-3",
             contestName: "Free programming books"
-        }
+        },
     ]
 }
 

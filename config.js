@@ -5,6 +5,7 @@ export const nodeEnv = env.NODE_ENV || "development";
 
 /* export object as default component */
 export default {
+    mongodbUri: 'mongodb://localhost:27017',
     port: env.PORT || 1300,
     host: env.HOST || '0.0.0.0',
     getServerUrl() {
